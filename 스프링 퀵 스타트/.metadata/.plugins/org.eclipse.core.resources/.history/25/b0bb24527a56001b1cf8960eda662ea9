@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<context:component-scan
+		base-package="com.springbook.biz" />
+
+	<aop:aspectj-autoproxy />
+
+	<!-- DataSource 설정 -->
+
+
+	<context:property-placeholder
+		location="classpath:config/database.properties" />
+
+
+	<bean destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
+
+		<property value="${jdbc.driver}" name="driverClassName" />
+
+		<property value="${jdbc.url}" name="url" />
+
+		<property value="${jdbc.username}" name="username" />
+
+		<property value="${jdbc.password}" name="password" />
+
+	</bean>
+
+	<!-- Spring JDBC 설정 -->
+
+
+
+	<bean class="org.springframework.jdbc.core.JdbcTemplate"
+		id="jdbcTemplate">
+
+		<property name="dataSource" ref="dataSource" />
+
+	</bean>
+
+	<!-- Transaction 설정 -->
+
+
+
+	<bean
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		id="txManager">
+
+		<property name="dataSource" ref="dataSource" />
+
+	</bean>
+
+
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+
+
+		<tx:attributes>
+
+			<tx:method name="get*" read-only="true" />
+
+			<tx:method name="*" />
+
+		</tx:attributes>
+
+	</tx:advice>
+
+
+	<aop:config>
+
+		<aop:pointcut id="txPointcut"
+			expression="execution(* com.springbook.biz..*(..))" />
+
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="txPointcut" />
+
+	</aop:config>
+
+</beans>

@@ -1,0 +1,5 @@
+package com.myspring.pro27.board.impl;
+
+public class BoardDAOSpring {
+
+}

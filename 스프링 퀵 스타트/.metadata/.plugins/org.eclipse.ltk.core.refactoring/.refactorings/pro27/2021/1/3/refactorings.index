@@ -1,0 +1,21 @@
+1610263654510	Rename resource 'login.proc.jsp'
+1610298641989	Delete element
+1610298644738	Delete element
+1610298647904	Delete element
+1610298650523	Delete element
+1610332012695	Delete element
+1610385011457	Delete element
+1610385301265	Move 'action-servlet.xml' to 'config'
+1610385314414	Rename resource 'action-servlet.xml'
+1610498168296	Delete element
+1610502662085	Move 2 resources to 'board'
+1610503878756	Move 2 resources to 'webapp'
+1610549394008	Delete elements
+1610636279166	Copy file
+1610636892998	Delete element
+1610638038098	Encapsulate field 'searchCondition'
+1610638043453	Encapsulate field 'searchKeyword'
+1610640830597	Encapsulate field 'uploadFile'
+1610642505353	Delete element
+1610669521466	Delete element
+1610675462285	Delete element

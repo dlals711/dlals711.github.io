@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<context:component-scan
+		base-package="com.myspring.view" />
+
+	<mvc:annotation-driven />
+
+	<!-- 파일 업로드 설정 -->
+
+
+
+	<bean
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		id="multipartResolver">
+
+		<property value="100000" name="maxUploadSize" />
+
+	</bean>
+
+	<!-- 예외 처리 설정 -->
+
+
+
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"
+		id="exceptionResolver">
+
+
+		<property name="exceptionMappings">
+
+
+			<props>
+
+				<prop key="java.lang.ArithmeticException">common/arithmeticError.jsp </prop>
+
+				<prop key="java.lang.NullPointerException">common/nullPointerError.jsp </prop>
+
+			</props>
+
+		</property>
+
+		<property value="common/error.jsp" name="defaultErrorView" />
+
+	</bean>
+
+	<!-- 다국어 설정 -->
+
+
+	<!-- MessageSource 등록 -->
+
+
+
+	<bean
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		id="messageSource">
+
+
+		<property name="basenames">
+
+
+			<list>
+
+				<value>message.messageSource</value>
+
+			</list>
+
+		</property>
+
+	</bean>
+
+	<!-- LocaleResolver 등록 -->
+
+
+	<bean
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver"
+		id="localeResolver" />
+
+	<!-- LocaleChangeInterceptor 등록 -->
+
+
+
+	<mvc:interceptors>
+
+
+		<bean
+			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+
+			<property value="lang" name="paramName" />
+
+		</bean>
+
+	</mvc:interceptors>
+
+</beans>

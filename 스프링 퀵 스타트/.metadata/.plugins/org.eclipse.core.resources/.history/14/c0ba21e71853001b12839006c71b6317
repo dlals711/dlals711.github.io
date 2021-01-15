@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@page import="java.util.List" %>
+<%@page import="com.myspring.pro27.board.impl.BoardDAO" %>
+<%@page import="com.myspring.pro27.board.BoardVO" %>
+
+<%
+	// 1. 사용자 입력 정보 추출(검색 기능은 나중에 구현)
+	// 2. DB 연동 처리
+	BoardVO vo = new BoardVO();
+	BoardDAO boardDAO = new BoardDAO();
+	List<BoardVO> boardList = boardDAO.getBoardList(vo);
+	
+	// 3. 응답 화면 구현
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
