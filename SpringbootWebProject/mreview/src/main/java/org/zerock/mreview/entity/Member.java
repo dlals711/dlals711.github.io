@@ -6,12 +6,13 @@ import javax.persistence.*;
 
 @Entity
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @ToString
 @Table(name = "m_member")
-public class Member extends BaseEntity {
+public class Member extends BaseEntity{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long mid;
@@ -21,4 +22,5 @@ public class Member extends BaseEntity {
     private String pw;
 
     private String nickname;
+
 }
