@@ -1,5 +1,6 @@
 package org.zerock.mreview.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,13 +14,14 @@ import java.net.URLEncoder;
 @NoArgsConstructor
 @Builder
 public class MovieImageDTO {
+
     private String uuid;
 
     private String imgName;
 
     private String path;
 
-    public String getImageURL() {
+    public String getImageURL(){
         try {
             return URLEncoder.encode(path+"/"+uuid+"_"+imgName,"UTF-8");
         } catch (UnsupportedEncodingException e) {
@@ -27,13 +29,13 @@ public class MovieImageDTO {
         }
         return "";
     }
-
-    public String getThumbnailURL() {
+    public String getThumbnailURL(){
         try {
-            return URLEncoder.encode(path+"s_"+uuid+"_"+imgName,"UTF-8");
+            return URLEncoder.encode(path+"/s_"+uuid+"_"+imgName,"UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
         return "";
     }
 }
+
