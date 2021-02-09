@@ -1,10 +1,10 @@
-package org.zerock.fancafe;
+package jpabook.jpashop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FancafeApplicationTests {
+class JpashopApplicationTests {
 
     @Test
     void contextLoads() {

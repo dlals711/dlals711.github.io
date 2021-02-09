@@ -1,13 +1,13 @@
-package org.zerock.fancafe;
+package jpabook.jpashop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FancafeApplication {
+public class JpashopApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FancafeApplication.class, args);
+        SpringApplication.run(JpashopApplication.class, args);
     }
 
 }
