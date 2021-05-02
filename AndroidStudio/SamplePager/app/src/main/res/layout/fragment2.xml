@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" android:background="#FFC107">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment3">
 
-    <Button
-            android:text="두 번째"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/edge">
+
+        <TextView
+            android:id="@+id/map_address"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"/>
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="지도" />
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/search3"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </RelativeLayout>
+
+
 </LinearLayout>
