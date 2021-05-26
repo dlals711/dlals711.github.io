@@ -22,13 +22,14 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import code.codesample.samplepush.R;
+
 public class MainActivity2 extends AppCompatActivity {
     EditText editText;
     TextView textView;
 
     static RequestQueue requestQueue;
-    static String regId =
-            "euaMcPiNENE:APA91bFHPJu3nw7Z6v4jttcvkyypC6Yr9TGbNDFLHUxrtK7rQBquGpOHLrhBltjuSKFTjoIB8yL8fM2rtYKRoSS4lDe6lUTGxZO-TUR4n5LGtGE2fvEkWdntmTq9wXRIvr58Uy13H6KV";
+    static String regId = "eVjkdOCHHDw:APA91bGxqznw0Gyoaogws1YCasgM7m_wqWp5o3CoSC6gWfP0QfmcNa5VCarZYCwME0QfRL2fsVOkJBLefrwcIeo0laQhX393p6V5dv2rCMfJAC8BUe4IAkEItY5EMJVXWB9XqYhWd0OP";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,14 @@ public class MainActivity2 extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textView);
 
-        send("qweqwe");
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = editText.getText().toString();
+                send(input);
+            }
+        });
 
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(getApplicationContext());
