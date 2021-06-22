@@ -2,6 +2,7 @@ package com.example.board;
 
 import com.example.board.domain.BoardDTO;
 import com.example.board.mapper.BoardMapper;
+import com.example.board.paging.Criteria;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -82,10 +83,10 @@ public class MapperTests {
     }
 
     @Test
-    public void testSelectList() {
-        int boardTotalCount = boardMapper.selectBoardTotalCount();
+    public void testSelectList(BoardDTO params) {
+        int boardTotalCount = boardMapper.selectBoardTotalCount(params);
         if (boardTotalCount > 0) {
-            List<BoardDTO> boardList = boardMapper.selectBoardList();
+            List<BoardDTO> boardList = boardMapper.selectBoardList(params);
             if (CollectionUtils.isEmpty(boardList) == false) {
                 for (BoardDTO board : boardList) {
                     System.out.println("=========================");

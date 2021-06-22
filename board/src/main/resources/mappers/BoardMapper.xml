@@ -17,75 +17,74 @@
 
     <insert id="insertBoard" parameterType="BoardDTO">
         INSERT INTO tb_board (
-            <include refid="boardColumns" />
+        <include refid="boardColumns"/>
         )
         VALUES (
-            #{idx}
-            , #{title}
-            , #{content}
-            , #{writer}
-            , 0
-            , IFNULL(#{noticeYn}, 'N')
-            , IFNULL(#{secretYn}, 'N')
-            , 'N'
-            , NOW()
-            , NULL
-            , NULL
+        #{idx}
+        , #{title}
+        , #{content}
+        , #{writer}
+        , 0
+        , IFNULL(#{noticeYn}, 'N')
+        , IFNULL(#{secretYn}, 'N')
+        , 'N'
+        , NOW()
+        , NULL
+        , NULL
         )
     </insert>
 
-    <select id="selectBoardDetail" parameterType="long" resultType="BoardDTO">
+    <select id="selectBoardDetail" parameterType="long" resultType="com.example.board.domain.BoardDTO">
         SELECT
-            <include refid="boardColumns" />
+        <include refid="boardColumns"/>
         FROM
-             tb_board
+        tb_board
         WHERE
-              delete_yn = 'N'
+        delete_yn = 'N'
         AND
-              idx = #{idx}
+        idx = #{idx}
     </select>
 
     <update id="updateBoard" parameterType="BoardDTO">
         UPDATE tb_board
-        SET
-            update_time = NOW()
-            , title = #{title}
-            , content = #{content}
-            , writer = #{writer}
-            , notice_yn = IFNULL(#{noticeYn}, 'N')
-            , secret_yn = IFNULL(#{secretYn}, 'N')
-        WHERE
-            idx = #{idx}
+        SET update_time = NOW()
+          , title       = #{title}
+          , content     = #{content}
+          , writer      = #{writer}
+          , notice_yn   = IFNULL(#{noticeYn}, 'N')
+          , secret_yn   = IFNULL(#{secretYn}, 'N')
+        WHERE idx = #{idx}
     </update>
 
     <delete id="deleteBoard" parameterType="long">
         UPDATE tb_board
-        SET
-            delete_yn = 'Y'
+        SET delete_yn   = 'Y'
           , delete_time = NOW()
-        WHERE
-            idx = #{idx}
+        WHERE idx = #{idx}
     </delete>
 
     <select id="selectBoardList" parameterType="BoardDTO" resultType="BoardDTO">
         SELECT
-            <include refid="boardColumns" />
+        <include refid="boardColumns" />
         FROM
-            tb_board
+        tb_board
         WHERE
-            delete_yn = 'N'
+        delete_yn = 'N'
+        <include refid="CommonMapper.search" />
         ORDER BY
-            notice_yn ASC,
-            idx DESC,
-            insert_time DESC
+        notice_yn ASC,
+        idx DESC,
+        insert_time DESC
+        <include refid="CommonMapper.paging" />
     </select>
 
     <select id="selectBoardTotalCount" parameterType="BoardDTO" resultType="int">
         SELECT
-            COUNT(*)
+        COUNT(*)
         FROM
-            tb_board
+        tb_board
         WHERE
-            delete_yn = 'N'
+        delete_yn = 'N'
+        <include refid="CommonMapper.search" />
     </select>
 </mapper>

@@ -13,8 +13,12 @@ import org.springframework.context.annotation.PropertySource;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
+@EnableTransactionManagement
 @PropertySource("classpath:/application.properties")
 public class DBConfiguration {
 
@@ -37,7 +41,7 @@ public class DBConfiguration {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource());
 		factoryBean.setMapperLocations(applicationContext.getResources("classpath:/mappers/**/*Mapper.xml"));
-        factoryBean.setTypeAliasesPackage("com.example.board.domain");
+        factoryBean.setTypeAliasesPackage("com.example.board.*");
         factoryBean.setConfiguration(mybatisConfg());
 		return factoryBean.getObject();
     }
@@ -51,6 +55,11 @@ public class DBConfiguration {
     @ConfigurationProperties(prefix = "mybatis.configuration")
     public org.apache.ibatis.session.Configuration mybatisConfg() {
         return new org.apache.ibatis.session.Configuration();
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager() {
+        return new DataSourceTransactionManager(dataSource());
     }
 
 }
