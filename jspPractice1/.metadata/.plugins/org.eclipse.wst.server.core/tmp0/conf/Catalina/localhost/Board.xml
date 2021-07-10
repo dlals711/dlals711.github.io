@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="C:\Users\leeym\eclipse-workspace1\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Board" path="/Board" reloadable="true" source="org.eclipse.jst.jee.server:Board">
+      	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" loginTimeOut="10" maxWait="5000" name="jdbc/pool" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" username="hr2"/>
+      </Context>

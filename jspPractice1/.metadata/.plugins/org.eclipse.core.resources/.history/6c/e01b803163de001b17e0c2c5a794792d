@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+	request.setCharacterEncoding("EUC-KR");
+	
+%>
+
+<!-- 게시글 작성한 데이터를 한번에 읽어드림 -->
+<jsp:useBean id="boardbean" class="model.BoardBean">
+	<jsp:setProperty name="boardbean" property="*" />
+</jsp:useBean>
+</body>
+</html>

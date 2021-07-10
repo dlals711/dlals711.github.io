@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+	request.setCharacterEncoding("EUC-KR");
+
+	// 쿠키를 사용하려면 쿠키클래스를 생성해주어야 함
+	Cookie cookie = new Cookie("", ""); // 첫 번째 String에는 키값을 적어줌, 두 번째 String에는 해당하는 value 값을 넣어줌
+%>
+
+</body>
+</html>

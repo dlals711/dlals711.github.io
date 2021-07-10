@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Top -->
+	<table width="800">
+		<tr height="100">
+		<!-- 로고이미지 -->
+			<td colspan="2" align="center" width="260">
+				<img alt="" src="image/camping.png" width="200" height="70">
+			</td>
+			<td colspan="4" align="center">
+				<font size="10">낭만 캠핑</font>
+			</td>
+		</tr>
+		
+		<tr height="50">
+			<td align="center">텐트</td>
+			<td align="center">텐트</td>
+			<td align="center">텐트</td>
+			<td align="center">텐트</td>
+			<td align="center">텐트</td>
+			<td align="center">텐트</td>
+		</tr>
+	
+	</table>
+</body>
+</html>

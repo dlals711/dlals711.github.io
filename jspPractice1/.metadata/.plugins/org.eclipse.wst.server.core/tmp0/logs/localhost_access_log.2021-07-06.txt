@@ -1,0 +1,22 @@
+185.216.140.27 - - [06/Jul/2021:01:36:52 +0900] "-" 400 2129
+127.0.0.1 - - [06/Jul/2021:21:39:43 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:21:39:45 +0900] "GET /Board/BoardWrite.jsp HTTP/1.1" 200 129
+127.0.0.1 - - [06/Jul/2021:21:57:06 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:21:57:08 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1329
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:21:57:22 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1379
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:21:57:42 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1394
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:21:58:06 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1397
+127.0.0.1 - - [06/Jul/2021:23:05:47 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:05:48 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1397
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:06:01 +0900] "POST /Board/BoardWriteProc.jsp HTTP/1.1" 500 2242
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:06:21 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1397
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:06:33 +0900] "POST /Board/BoardWriteProc.jsp HTTP/1.1" 200 195
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:08:03 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1397
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:08:12 +0900] "POST /Board/BoardWriteProc.jsp HTTP/1.1" 200 195
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:12:38 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1397
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:12:43 +0900] "POST /Board/BoardWriteProc.jsp HTTP/1.1" 200 195
+127.0.0.1 - - [06/Jul/2021:23:15:13 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:15:13 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1397
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:15:18 +0900] "POST /Board/BoardWriteProc.jsp HTTP/1.1" 200 195
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:15:29 +0900] "GET /Board/BoardWriteForm.jsp HTTP/1.1" 200 1397
+0:0:0:0:0:0:0:1 - - [06/Jul/2021:23:15:33 +0900] "POST /Board/BoardWriteProc.jsp HTTP/1.1" 200 195

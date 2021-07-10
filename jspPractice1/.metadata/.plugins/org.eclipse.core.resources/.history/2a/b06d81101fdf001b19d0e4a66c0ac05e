@@ -1,0 +1,18 @@
+<%@page import="model.BoardDAO"%>
+<%@page import="model.BoardBean"%>
+<%@page import="java.util.Vector"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<body>
+	<%
+		// 전체 게시글의 내용을 jsp 쪽으로 가져와야함
+		BoardDAO bdao = new BoardDAO();
+	
+		
+		// 전체 게시글을 리턴 받아주는 소스
+		Vector<BoardBean> vec = bdao.getAllBoard();
+	%>
+</body>
+</html>

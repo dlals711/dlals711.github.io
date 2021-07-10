@@ -1,0 +1,21 @@
+<%@page import="model.MemberBean"%>
+<%@page import="model.MemberDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--0. memberList에서 넘긴 id를 받아줌. 1. 데이터베이스에서 모든 회원의 정보를 가져옴. 2. table태그를 이용하여 화면에 회원들의 정보를 출력 -->
+	
+	<%
+		String id = request.getParameter("id");
+	
+		MemberDAO mdao = new MemberDAO();
+		MemberBean mbean = mdao.oneSelectMember(id); // 해당하는 id정보를 넘김
+	%>
+</body>
+</html>

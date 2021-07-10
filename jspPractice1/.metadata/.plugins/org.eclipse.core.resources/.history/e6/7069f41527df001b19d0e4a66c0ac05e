@@ -1,0 +1,29 @@
+<%@page import="model.BoardBean"%>
+<%@page import="model.BoardDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<body>
+	<%
+		int num = Integer.parseInt(request.getParameter("num").trim());
+	
+		// 데이터 베이스 접근
+		BoardDAO bdao = new BoardDAO(); 
+		// boardbean 타입으로 하나의 게시글을 리턴
+		BoardBean bean = bdao.getOneBoard(num);
+	%>
+	
+	<div align="center">
+	<h2>게시글 보기</h2>
+		<table width="600" border="1" bgcolor="skyblue">
+		<tr height="40">
+			<td align="center" width="120">글번호</td>
+			<td align="center" width="180"><%=bean.getNum() %></td>
+			<td align="center" width="120">조회수</td>
+			<td align="center" width="180"><%=bean.getReadcount() %></td>
+		</tr>
+		</table>
+	</div>
+</body>
+</html>

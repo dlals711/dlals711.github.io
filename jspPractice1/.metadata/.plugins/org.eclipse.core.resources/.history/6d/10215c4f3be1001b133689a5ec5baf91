@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<body>
+<%
+	String center = request.getParameter("Center");
+
+	// 처음 실행시에는 cetner 값이 넘어오지 않기에
+	if(center == null) { // null 처리
+		center = "Center.jsp"; // 디폴트 center 값을 부여
+	}
+%>
+	<table width="1000">
+		<!-- Top 부분 -->
+		<tr height="120" align="center">
+			<td align="center" width="1000">
+				<jsp:include page="Top.jsp"/>
+			</td>
+		</tr>
+		
+		<!-- Center 부분 -->
+		<tr height="500" align="center">
+			<td align="center" width="1000">
+				<jsp:include page="<%=center %>"/>
+			</td>
+		</tr>
+		
+				<!-- Bottom 부분 -->
+		<tr height="100" align="center">
+			<td align="center" width="1000">
+				<jsp:include page="Bottom.jsp"/>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

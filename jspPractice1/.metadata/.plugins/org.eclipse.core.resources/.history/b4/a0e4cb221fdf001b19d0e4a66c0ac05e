@@ -1,0 +1,31 @@
+<%@page import="model.BoardDAO"%>
+<%@page import="model.BoardBean"%>
+<%@page import="java.util.Vector"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<body>
+	<%
+		// 전체 게시글의 내용을 jsp 쪽으로 가져와야함
+		BoardDAO bdao = new BoardDAO();
+	
+		
+		// 전체 게시글을 리턴 받아주는 소스
+		Vector<BoardBean> vec = bdao.getAllBoard();
+	%>
+	
+	<div align="center">
+	<h2>전체 게시글 보기</h2>
+	<table width="600" border="1" bgcolor="skyblue">
+		<tr height="40">
+			<td width="50" align="center">번호</td>
+			<td width="250" align="center">제목</td>
+			<td width="100" align="center">작성자</td>
+			<td width="150" align="center">작성일</td>
+			<td width="50" align="center">조회수</td>
+		</tr>
+	</table>
+	</div>
+</body>
+</html>
